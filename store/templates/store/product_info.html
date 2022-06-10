@@ -1,0 +1,21 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <a class="btn btn-outline-dark" style="margin: 10px 50px;" href="{% url 'store' %}">&#x2190;Back To Store</a>
+        <div class="product" style="height: fit-content; width: 500px; margin: auto; box-sizing: border-box; padding: 20px; background-color: #ffffff; border-radius: 6px;">
+            <div class="product-image">
+                <img class="thumbnail" src="{{ product.imageURL }}" alt="" style="height: 200px; width: 250px; margin-left: 40px; box-shadow: 2px 2px 12px #00000033;">
+            </div>
+            <div class="product-info" style="height: fit-content; width: 400px; margin: auto; text-align: left; padding: 10px;">
+                <h1>{{ product.name }}</h1>
+                <p>{{ product.description }}</p>
+                <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <a style="float: right; margin: 0px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+ 
