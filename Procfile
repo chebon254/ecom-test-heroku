@@ -1,1 +1,1 @@
-worker:  bundle exec rake jobs:work
+web: gunicorn ecom-test-heroku.wsgi --log-file -
